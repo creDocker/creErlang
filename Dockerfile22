@@ -15,7 +15,7 @@ ARG BUILD_TAG=latest
 
 # version: yyyy.n for stable versions / 0.yyyy for development
 ENV INITRD No
-ENV ERLANG_VERSION 17.0
+ENV ERLANG_VERSION 24.0
 
 LABEL Name="Erlang for CRE" \
       CRE=$CRE_VERSION \ 
