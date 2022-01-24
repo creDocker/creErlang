@@ -44,6 +44,6 @@ jobs:
         with:
           file: ./Dockerfile16
           push: true
-          tags: tamboraorg/creerlang:2016.0 
+          tags: tamboraorg/creerlang:2016.0
       
 
