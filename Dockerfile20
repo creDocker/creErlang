@@ -15,8 +15,7 @@ ARG BUILD_TAG=latest
 
 # version: yyyy.n for stable versions / 0.yyyy for development
 ENV INITRD No
-ENV ERLANG_VERSION 17.0
-# 25
+ENV ERLANG_VERSION 25.0
 
 LABEL Name="Erlang for CRE" \
       CRE=$CRE_VERSION \ 
@@ -31,10 +30,8 @@ LABEL Name="Erlang for CRE" \
 RUN wget -O- https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc | apt-key add -
 
 #20
+## RUN echo "deb https://packages.erlang-solutions.com/ubuntu $(lsb_release -cs) contrib" | tee /etc/apt/sources.list.d/erlang.list
 RUN echo "deb https://packages.erlang-solutions.com/ubuntu focal contrib" | tee /etc/apt/sources.list.d/erlang.list
-
-#18
-# RUN echo "deb https://packages.erlang-solutions.com/ubuntu bionic contrib" | tee /etc/apt/sources.list.d/erlang.list
 
 RUN apt update -y  && apt install -y erlang
 # Security packages

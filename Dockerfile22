@@ -16,7 +16,7 @@ ARG BUILD_TAG=latest
 # version: yyyy.n for stable versions / 0.yyyy for development
 ENV INITRD No
 ENV ERLANG_VERSION 24.0
-# 24
+
 # https://www.rabbitmq.com/install-debian.html#apt-pinning
 # https://wiki.ubuntuusers.de/Apt-Pinning/
 
@@ -29,11 +29,6 @@ LABEL Name="Erlang for CRE" \
       Build_=$BUILD_TAG 
 
 # Install Erlang
-## RUN wget -O- https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc | apt-key add -
-
-#general
-## RUN echo "deb https://packages.erlang-solutions.com/ubuntu $(lsb_release -cs) contrib" | tee /etc/apt/sources.list.d/erlang.list
-
 RUN apt update -y  && apt install -y erlang
 # Security packages
 RUN apt install -y erlang-asn1 erlang-crypto erlang-public-key erlang-ssl 
@@ -43,7 +38,6 @@ RUN apt install -y erlang-asn1 erlang-crypto erlang-public-key erlang-ssl
 ## erlang-runtime-tools erlang-snmp erlang-syntax-tools erlang-tftp erlang-tools erlang-xmerl
 
 ## https://www.rabbitmq.com/install-debian.html#apt
-
  
 
 RUN mkdir -p /cre && touch /cre/versions.txt && \ 
