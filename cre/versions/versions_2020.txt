@@ -4,4 +4,4 @@ creBuild 	 2023.02
   OpenSSL 1.1.1f  31 Mar 2020
   Java 	 openjdk version "1.8.0_352"
   Python3 	 Python 3.8.10
- erlang 	 "25"
+ erlang 	 "22"
