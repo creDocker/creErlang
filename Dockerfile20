@@ -27,11 +27,9 @@ LABEL Name="Erlang for CRE" \
 
 # Install Erlang
 
-## RUN wget -O- https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc | apt-key add -
-
-#20
-## RUN echo "deb https://packages.erlang-solutions.com/ubuntu $(lsb_release -cs) contrib" | tee /etc/apt/sources.list.d/erlang.list
-## RUN echo "deb https://packages.erlang-solutions.com/ubuntu focal contrib" | tee /etc/apt/sources.list.d/erlang.list
+## Newer versions vs official ubuntu version
+#  RUN wget -O- https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc | apt-key add -
+# RUN echo "deb https://packages.erlang-solutions.com/ubuntu $(lsb_release -cs) contrib" | tee /etc/apt/sources.list.d/erlang.list
 
 RUN apt update -y  && apt install -y erlang
 # Security packages
@@ -42,8 +40,6 @@ RUN apt install -y erlang-asn1 erlang-crypto erlang-public-key erlang-ssl
 ## erlang-runtime-tools erlang-snmp erlang-syntax-tools erlang-tftp erlang-tools erlang-xmerl
 
 ## https://www.rabbitmq.com/install-debian.html#apt
-
- 
 
 RUN mkdir -p /cre && touch /cre/versions.txt && \ 
     echo "$(date +'%F %R') \t erlang \t $(erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell)" >> /cre/versions.txt 
