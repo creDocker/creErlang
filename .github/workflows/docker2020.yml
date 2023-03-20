@@ -34,12 +34,12 @@ jobs:
         with:
           file: ./Dockerfile20
           push: true
-          tags: tamboraorg/creerlang:check20 
+          tags: credocker/creerlang:check20 
 
       -
         name: Test
         run: |
-          docker run tamboraorg/creerlang:check20 /cre/erlang-test.sh   
+          docker run credocker/creerlang:check20 /cre/erlang-test.sh   
 
       -
         name: Build and push
@@ -48,6 +48,6 @@ jobs:
         with:
           file: ./Dockerfile20
           push: true
-          tags: tamboraorg/creerlang:2020.0, tamboraorg/creerlang:latest 
+          tags: credocker/creerlang:2020.0, credocker/creerlang:latest 
       
 
